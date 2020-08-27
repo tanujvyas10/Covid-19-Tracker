@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
+import {sortTable} from './Utils/index'
 import InfoBox from './components/InfoBox'
 import Map from './components/Map'
 import Table from './components/Table/Table'
@@ -16,6 +17,8 @@ function App() {
 const [country,setCountry] = useState("worldwide")
 const  [countryInfo,setCountryInfo] = useState({})
 const [tableData,setTableData] = useState([])
+
+
 useEffect(()=>{
   const getCountiresData = async () => {
     await fetch('https://disease.sh/v3/covid-19/countries')
@@ -28,9 +31,11 @@ useEffect(()=>{
      }
    ))
 
+    let sortedTable = sortTable(data)
+    
    setCountries(countries)
    console.log("table data",data)
-   setTableData(data)
+   setTableData(sortedTable)
   })
   .catch(err=>{
 

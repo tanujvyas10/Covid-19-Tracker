@@ -12,7 +12,8 @@ import Map from './components/Map'
 function App() {
   
   const [countries,setCountries] = useState([])
-
+const [country,setCountry] = useState("worldwide")
+const  [countryInfo,setCountryInfo] = useState({})
 
 useEffect(()=>{
   const getCountiresData = async () => {
@@ -40,10 +41,32 @@ getCountiresData()
 },[])//load only once act as compo.did.mount(when [] empty) and then only when coutnries change
 
 
+
+useEffect(()=>{
+  fetch('https://disease.sh/v3/covid-19/all')
+  .then(response=> response.json())
+  .then((data)=>{
+    setCountryInfo(data)
+  })
+})
+
 const onCountryChange = async(e) =>{
 e.preventDefault()
 const countryCode = e.target.value
-console.log(countryCode)
+
+const url = countryCode === 'worldwide'? 'https://disease.sh/v3/covid-19/all'
+: `
+https://disease.sh/v3/covid-19/countries/${countryCode}`
+
+
+
+await fetch(url)
+.then(response=>response.json())
+.then(data=>{
+  setCountryInfo(data)
+  setCountry(countryCode)
+})
+
 
 }
   return (
@@ -70,9 +93,9 @@ console.log(countryCode)
     </div>
 
     <div className = "app__stats">
-<InfoBox title = "Coronavirus Cases" cases = {123} total={3000} />
-<InfoBox title = "Recovered" cases = {123} total={3000} />       
-<InfoBox title = "Deaths" cases = {123} total={3000} />
+<InfoBox title = "Coronavirus Cases" cases = {countryInfo.todayCases} total={countryInfo.cases} />
+<InfoBox title = "Recovered" cases = {countryInfo.todayRecovered} total={countryInfo.recovered} />       
+<InfoBox title = "Deaths" cases = {countryInfo.todayDeaths} total={countryInfo.deaths} />
     </div>
   <Map/>
 

@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import {sortTable} from './Utils/index'
 import InfoBox from './components/InfoBox'
+import LineGraph from './components/LineGraph'
 import Map from './components/Map'
 import Table from './components/Table/Table'
 function App() {
@@ -114,7 +115,7 @@ await fetch(url)
 <Table countries = {tableData} />
   <h3>Worldwide new cases</h3>
   </CardContent>
-
+<LineGraph/>
   </Card>  
     </div>
   );

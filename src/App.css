@@ -7,10 +7,15 @@
   justify-content: space-evenly;
   background-color: #f5f6fa;
   padding: 20px;
+
 }
 
 .app__dropdown {
   background-color: white;
+}
+
+.left-part {
+  flex: 0.9;
 }
 
 
@@ -25,9 +30,15 @@ body{
   margin-bottom: 20px;
   justify-content: space-between;
 }
-.app__stats{
 
+.app__stats {
   display: flex;
   justify-content: space-between;
 }
 
+
+@media (max-width:990px){
+  .App{
+    flex-direction: column;
+  }
+}

@@ -115,7 +115,7 @@ await fetch(url)
 <Table countries = {tableData} />
   <h3>Worldwide new cases</h3>
   </CardContent>
-<LineGraph/>
+<LineGraph casesType = {"cases"}/>
   </Card>  
     </div>
   );

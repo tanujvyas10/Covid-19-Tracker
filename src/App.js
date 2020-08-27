@@ -9,12 +9,13 @@ import {
 } from "@material-ui/core";
 import InfoBox from './components/InfoBox'
 import Map from './components/Map'
+import Table from './components/Table/Table'
 function App() {
   
   const [countries,setCountries] = useState([])
 const [country,setCountry] = useState("worldwide")
 const  [countryInfo,setCountryInfo] = useState({})
-
+const [tableData,setTableData] = useState([])
 useEffect(()=>{
   const getCountiresData = async () => {
     await fetch('https://disease.sh/v3/covid-19/countries')
@@ -28,7 +29,8 @@ useEffect(()=>{
    ))
 
    setCountries(countries)
-  
+   console.log("table data",data)
+   setTableData(data)
   })
   .catch(err=>{
 
@@ -48,7 +50,7 @@ useEffect(()=>{
   .then((data)=>{
     setCountryInfo(data)
   })
-})
+},[])
 
 const onCountryChange = async(e) =>{
 e.preventDefault()
@@ -80,7 +82,7 @@ await fetch(url)
     <FormControl className="app__dropdown">
             <Select
               variant="outlined"
-              value="{country}"
+              value={country}
               onChange={onCountryChange}
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
@@ -104,7 +106,7 @@ await fetch(url)
   <Card className = "right-part">
   <CardContent>
   <h3>Live Cases by Country</h3>
-
+<Table countries = {tableData} />
   <h3>Worldwide new cases</h3>
   </CardContent>
 

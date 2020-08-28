@@ -23,6 +23,7 @@ Contains the following feature:-
 * npm start
 
 # Snapshots
-![image](https://user-images.githubusercontent.com/48439116/91593822-7d909580-e97e-11ea-8492-07e1e478f3ef.png)
-![image](https://user-images.githubusercontent.com/48439116/91593873-8e410b80-e97e-11ea-9fe9-6e9f37b8c2e3.png)
-![image](https://user-images.githubusercontent.com/48439116/91593898-9b5dfa80-e97e-11ea-8ffe-3640ff6920a8.png)
+![image](https://user-images.githubusercontent.com/48439116/91601167-cb110080-e986-11ea-999c-65f50dc9e11a.png)
+![image](https://user-images.githubusercontent.com/48439116/91601215-de23d080-e986-11ea-9029-beb58fcdcdd8.png)
+![image](https://user-images.githubusercontent.com/48439116/91601261-f1cf3700-e986-11ea-80c3-46cbd9a6fc13.png)
+

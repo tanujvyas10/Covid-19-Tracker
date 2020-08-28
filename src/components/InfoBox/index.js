@@ -7,9 +7,11 @@ import {
 
 import './infoBox.css'
 
-const index = ({title,cases,total, ...props}) => {
+const index = ({title,cases,total,active, ...props}) => {
     return (
-<Card className="infoBox" onClick= {props.onClick}>
+<Card className={`infoBox ${active && "infoBox-selected"} ${
+  isRed && 'infoBox-red'
+}`} onClick= {props.onClick}>
 <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}

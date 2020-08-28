@@ -107,14 +107,14 @@ await fetch(url)
     </div>
 
     <div className = "app__stats">
-<InfoBox onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
-<InfoBox onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
-<InfoBox onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
+<InfoBox active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
+<InfoBox active = {casesType === 'recover'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
+<InfoBox active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
     </div>
   <Map
   casesType = {casesType}
   countries={mapCountries}
-          casesType={casesType}
+         
           center={mapCenter}
           zoom={mapZoom}
   />

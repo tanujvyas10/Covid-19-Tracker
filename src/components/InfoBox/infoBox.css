@@ -7,20 +7,20 @@
 }
 
 
-.infoBox--selected {
-    border-top: 10px solid greenyellow;
+.infoBox-selected {
+    border-left: 10px solid greenyellow;
   }
   
-  .infoBox--red {
+  .infoBox-red {
     border-color: red;
   }
   
-  .infoBox_cases--green {
+  .infoBox_cases-green {
     color: lightgreen !important;
   }
   
   .infoBox_cases {
-    color: #cc1034;
+    color: #ca3c56;
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;

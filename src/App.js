@@ -85,50 +85,74 @@ await fetch(url)
 }
   return (
     <div className="App">
+   
+<div className = "left-part">
+<div className= "app_header">
+<h1>Covid -19 tracker</h1>
 
-    <div className="left-part">
+<FormControl className="app_dropdown">
+        <Select
+          variant="outlined"
+          value={country}
+          onChange={onCountryChange}
+        >
+          <MenuItem value="worldwide">Worldwide</MenuItem>
+          {countries.map((country) => (
+            <MenuItem value={country.value}>{country.name}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>   
+
+</div>
+
+<Card className = "description">
+
     
-    <div className= "app_header">
-    <h1>Covid -19 tracker</h1>
-  
-    <FormControl className="app_dropdown">
-            <Select
-              variant="outlined"
-              value={country}
-              onChange={onCountryChange}
-            >
-              <MenuItem value="worldwide">Worldwide</MenuItem>
-              {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+<CardContent>
+<h2>Description:-</h2>
+<br/>
+<br/>
+<li>Select the country from the selector above</li><br/>
+<li>You will get the latest updates regarding of Total cases, Recovered and death in the selected country</li><br/>
+<li>Dynamic graph tells about the latest data of selected nation</li><br/>
+<li>Radius of the affected nation according to the latest updates</li>
+</CardContent>
 
-    </div>
+</Card> 
+</div>
 
-    <div className = "app_stats">
-<InfoBox isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
-<InfoBox active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
-<InfoBox isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
-    </div>
-  <Map
-  casesType = {casesType}
-  countries={mapCountries}
-         
-          center={mapCenter}
-          zoom={mapZoom}
-  />
+    <Card className = "center-part">
 
-
-    </div>
-  <Card className = "right-part">
+    
   <CardContent>
   <h3>Live Cases by Country</h3>
 <Table countries = {tableData} />
   <h3>Worldwide new cases</h3>
   </CardContent>
 <LineGraph  casesType = {casesType}/>
-  </Card>  
+  </Card> 
+
+
+    <div className="right-part">
+    
+  
+
+    <div className = "app_stats">
+    <InfoBox isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
+    <InfoBox active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
+    <InfoBox isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
+        </div>
+      <Map
+      casesType = {casesType}
+      countries={mapCountries}
+              center={mapCenter}
+              zoom={mapZoom}
+      />
+  
+      
+
+    </div>
+   
     </div>
   );
 }

@@ -4,7 +4,7 @@
 
 .App{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #f5f6fa;
   padding: 20px;
 
@@ -14,8 +14,24 @@
   background-color: white;
 }
 
+.description {
+  width:400px;
+  color:#6a5d5d !important;
+  height:400px;
+
+}
+
+
 .left-part {
-  flex: 0.9;
+  flex: 0.3;
+}
+
+.center-part {
+  flex: 0.3;
+}
+
+.right-part {
+  flex: 0.4;
 }
 
 
@@ -27,7 +43,7 @@ body{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .app_header > h1{

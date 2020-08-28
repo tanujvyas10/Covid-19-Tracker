@@ -10,7 +10,7 @@
 
 }
 
-.app__dropdown {
+.app_dropdown {
   background-color: white;
 }
 
@@ -19,19 +19,23 @@
 }
 
 
-
 body{
   background-color: #f5f6fa;
 }
 
-.app__header{
+.app_header{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   justify-content: space-between;
 }
 
-.app__stats {
+.app_header > h1{
+  color:rgb(233, 123, 123);
+  font-size:40px;
+}
+
+.app_stats {
   display: flex;
   justify-content: space-between;
 }

@@ -88,10 +88,10 @@ await fetch(url)
 
     <div className="left-part">
     
-    <div className= "app__header">
+    <div className= "app_header">
     <h1>Covid -19 tracker</h1>
   
-    <FormControl className="app__dropdown">
+    <FormControl className="app_dropdown">
             <Select
               variant="outlined"
               value={country}
@@ -106,7 +106,7 @@ await fetch(url)
 
     </div>
 
-    <div className = "app__stats">
+    <div className = "app_stats">
 <InfoBox isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
 <InfoBox active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
 <InfoBox isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />

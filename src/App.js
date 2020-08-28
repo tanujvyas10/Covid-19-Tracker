@@ -107,9 +107,9 @@ await fetch(url)
     </div>
 
     <div className = "app__stats">
-<InfoBox active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
-<InfoBox active = {casesType === 'recover'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
-<InfoBox active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
+<InfoBox isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
+<InfoBox active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
+<InfoBox isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
     </div>
   <Map
   casesType = {casesType}

@@ -8,6 +8,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import {sortTable} from './Utils/index'
+import "leaflet/dist/leaflet.css";
 import InfoBox from './components/InfoBox'
 import LineGraph from './components/LineGraph'
 import Map from './components/Map'
@@ -18,8 +19,10 @@ function App() {
 const [country,setCountry] = useState("worldwide")
 const  [countryInfo,setCountryInfo] = useState({})
 const [tableData,setTableData] = useState([])
-
-
+const [mapCountries, setMapCountries] = useState([]);
+const [casesType, setCasesType] = useState("cases");
+const [mapCenter, setMapCenter] = useState({ lat: 20, lng: 77 });
+const [mapZoom, setMapZoom] = useState(3);
 useEffect(()=>{
   const getCountiresData = async () => {
     await fetch('https://disease.sh/v3/covid-19/countries')
@@ -36,6 +39,7 @@ useEffect(()=>{
     
    setCountries(countries)
    console.log("table data",data)
+   setMapCountries(data);
    setTableData(sortedTable)
   })
   .catch(err=>{
@@ -73,6 +77,8 @@ await fetch(url)
 .then(data=>{
   setCountryInfo(data)
   setCountry(countryCode)
+  setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+  setMapZoom(4);
 })
 
 
@@ -105,7 +111,12 @@ await fetch(url)
 <InfoBox title = "Recovered" cases = {countryInfo.todayRecovered} total={countryInfo.recovered} />       
 <InfoBox title = "Deaths" cases = {countryInfo.todayDeaths} total={countryInfo.deaths} />
     </div>
-  <Map/>
+  <Map
+  countries={mapCountries}
+          casesType={casesType}
+          center={mapCenter}
+          zoom={mapZoom}
+  />
 
 
     </div>

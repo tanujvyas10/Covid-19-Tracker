@@ -5,20 +5,20 @@ import {
     CardContent
   } from "@material-ui/core";
 
-  
+import './infoBox.css'
 
 const index = ({title,cases,total}) => {
     return (
-<Card>
+<Card className="infoBox">
 <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
-        <h2 className={`infoBox__cases`}>
+        <h2 className={`infoBox_cases`}>
           {cases}
         </h2>
 
-        <Typography className="infoBox__total" color="textSecondary">
+        <Typography className="infoBox_total" color="textSecondary">
           {total} Total
         </Typography>
       </CardContent>

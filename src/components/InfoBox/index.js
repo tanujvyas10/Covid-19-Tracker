@@ -7,9 +7,9 @@ import {
 
 import './infoBox.css'
 
-const index = ({title,cases,total}) => {
+const index = ({title,cases,total, ...props}) => {
     return (
-<Card className="infoBox">
+<Card className="infoBox" onClick= {props.onClick}>
 <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}

@@ -5,22 +5,22 @@ import {
     CardContent
   } from "@material-ui/core";
 
-import './infoBox.css'
+import './Tabs.css'
 
 const index = ({title,cases,total,active,isRed, ...props}) => {
     return (
-<Card className={`infoBox ${active && "infoBox-selected"} ${
-  isRed && "infoBox-red"
+<Card className={`Tabs ${active && "Tabs-selected"} ${
+  isRed && "Tabs-red"
 }`} onClick= {props.onClick}>
 <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
-        <h2 className={`infoBox_cases ${!isRed && "infoBox_cases-green"}`}>
+        <h2 className={`Tabs_cases ${!isRed && "Tabs_cases-green"}`}>
           {cases}
         </h2>
 
-        <Typography className="infoBox_total" color="textSecondary">
+        <Typography className="Tabs_total" color="textSecondary">
           {total} Total
         </Typography>
       </CardContent>

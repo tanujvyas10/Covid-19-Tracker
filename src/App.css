@@ -1,5 +1,6 @@
 *{
   margin:0;
+
 }
 
 .App{
@@ -31,8 +32,12 @@
 
 .center-part {
   flex: 0.3;
+  color:#6a5d5d !important;
   margin-right:10px;
 }
+
+
+
 
 .right-part {
   flex: 0.4;

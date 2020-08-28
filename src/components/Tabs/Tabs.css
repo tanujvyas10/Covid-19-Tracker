@@ -1,32 +1,32 @@
-.infoBox{
+.Tabs{
     flex:1;
 }
 
-.infoBox:not(:last-child){
+.Tabs:not(:last-child){
     margin-right: 8px;
 }
 
 
-.infoBox-selected {
+.Tabs-selected {
     border-left: 10px solid greenyellow;
   }
   
-  .infoBox-red {
+  .Tabs-red {
     border-color: red;
   }
   
-  .infoBox_cases-green {
+  .Tabs_cases-green {
     color: lightgreen !important;
   }
   
-  .infoBox_cases {
+  .Tabs_cases {
     color: #ca3c56;
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
   }
   
-  .infoBox_total {
+  .Tabs_total {
     color: #6c757d;
     font-weight: 700 !important;
     font-size: 0.8rem !important;

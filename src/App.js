@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import {sortTable,resolvePrint} from './Utils/index'
 import "leaflet/dist/leaflet.css";
-import InfoBox from './components/InfoBox'
+import Tabs from './components/Tabs'
 import LineGraph from './components/LineGraph'
 import Map from './components/Map'
 import Table from './components/Table/Table'
@@ -125,7 +125,7 @@ await fetch(url)
 
     
   <CardContent>
-  <h3>Live Cases by Country</h3>
+  <h3>Country Wise Sorted Live Cases </h3>
 <Table countries = {tableData} />
   <h3>Worldwide new cases</h3>
   </CardContent>
@@ -138,9 +138,9 @@ await fetch(url)
   
 
     <div className = "app_stats">
-    <InfoBox isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
-    <InfoBox active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
-    <InfoBox isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
+    <Tabs isRed  active = {casesType === 'cases'} onClick = {(e)=> setCasesType('cases')} title = "Total Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
+    <Tabs active = {casesType === 'recovered'} onClick = {(e)=> setCasesType('recovered')} title = "Total Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
+    <Tabs isRed  active = {casesType === 'deaths'} onClick = {(e)=> setCasesType('deaths')} title = "Total Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
         </div>
       <Map
       casesType = {casesType}

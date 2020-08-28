@@ -7,7 +7,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import {sortTable} from './Utils/index'
+import {sortTable,resolvePrint} from './Utils/index'
 import "leaflet/dist/leaflet.css";
 import InfoBox from './components/InfoBox'
 import LineGraph from './components/LineGraph'
@@ -107,9 +107,9 @@ await fetch(url)
     </div>
 
     <div className = "app__stats">
-<InfoBox title = "Coronavirus Cases" cases = {countryInfo.todayCases} total={countryInfo.cases} />
-<InfoBox title = "Recovered" cases = {countryInfo.todayRecovered} total={countryInfo.recovered} />       
-<InfoBox title = "Deaths" cases = {countryInfo.todayDeaths} total={countryInfo.deaths} />
+<InfoBox onClick = {(e)=> setCasesType('cases')} title = "Coronavirus Cases" cases = {resolvePrint( countryInfo.todayCases)} total={resolvePrint(countryInfo.cases)} />
+<InfoBox onClick = {(e)=> setCasesType('recover')} title = "Recovered" cases = {resolvePrint(countryInfo.todayRecovered)} total={resolvePrint(countryInfo.recovered)} />       
+<InfoBox onClick = {(e)=> setCasesType('deaths')} title = "Deaths" cases = {resolvePrint(countryInfo.todayDeaths)} total={resolvePrint(countryInfo.deaths)} />
     </div>
   <Map
   countries={mapCountries}

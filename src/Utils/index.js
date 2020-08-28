@@ -7,6 +7,12 @@ export const sortTable= (sortedData)=>{
     return sortedData.sort((a, b) => a.cases > b.cases? -1:1 );  
   }
 
+  export const resolvePrint = (stat) =>{
+    if(stat)
+      return `+${numeral(stat).format("0.0a")}`
+      else
+      return "+0"
+  }
 
 const casesTypeColors = {
   cases: {

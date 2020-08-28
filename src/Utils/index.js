@@ -14,7 +14,7 @@ export const sortTable= (sortedData)=>{
       return "+0"
   }
 
-const casesTypeColors = {
+const casesColors = {
   cases: {
     hex: "#CC1034",
     rgb: "rgb(204, 16, 52)",
@@ -39,11 +39,11 @@ const casesTypeColors = {
   data.map((country) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}
-      color={casesTypeColors[casesType].hex}
-      fillColor={casesTypeColors[casesType].hex}
+      color={casesColors[casesType].hex}
+      fillColor={casesColors[casesType].hex}
       fillOpacity={0.4}
       radius={
-        Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
+        Math.sqrt(country[casesType]) * casesColors[casesType].multiplier
       }
     >
       <Popup>

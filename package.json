@@ -30,7 +30,7 @@
     "gh-pages": "^3.1.0",
     "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
     "heroku-postbuild": "npm run build",
-    "heroku-cleanup": "echo This runs after Heroku prunes and caches 
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies." 
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,5 +1,5 @@
 # About the project
-This is a graph representation of covid-19 at global level.
+This is a graph representation of covid-19 (WorldWide).
 
 Contains the following feature:-
 
